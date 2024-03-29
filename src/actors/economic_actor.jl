@@ -177,3 +177,11 @@ function produce_stock!(model::ABM, actor::EconomicActor)
 
     return actor
 end
+
+# EconomicActor has no space
+function add_agent!(agent::EconomicActor, model::ABM)
+    add_agent_to_model!(agent, model)
+end
+
+nearby_ids(agent::EconomicActor, model::ABM, r = 1) = allids(model)
+

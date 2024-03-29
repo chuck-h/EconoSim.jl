@@ -57,3 +57,11 @@ function MonetaryActor(id::Integer = 0;
 
     return actor
 end
+
+# MonetaryActor has no space
+function add_agent!(agent::MonetaryActor, model::ABM)
+    i = nextid(model)
+    print("id $(i)")
+    agent.id = i
+    add_agent_to_model!(agent, model)
+end
